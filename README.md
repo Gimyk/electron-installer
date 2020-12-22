@@ -13,6 +13,9 @@ and the icons in the icons folder, inclusive of the loader gif
 Steps
 > npm install electron-packager -g
 
+> npm install electron -g
+
+Then
 > npm install electron-winstaller
 
 > npm install electron-squirrel-startup
