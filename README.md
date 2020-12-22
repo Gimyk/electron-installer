@@ -12,12 +12,12 @@ and the icons in the icons folder, inclusive of the loader gif.
 
 Edit the build.js file and main.js file for name of application and location of files.
 
-Steps
+Steps (These are not necessary as electron will run as the dev-dependency)
 > npm install electron-packager -g
 
 > npm install electron -g
 
-Then
+Then (You can run this instead)
 > npm install electron-winstaller
 
 > npm install electron-squirrel-startup
