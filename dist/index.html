@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+
+    <div class="digital">
+        <span id="d_hour">00</span>:
+        <span id="d_minutes">00</span>:
+        <span id="d_second">00</span>
+        <br>
+        <span id="day">__</span>
+    </div>
+
+    <script>
+        const deg = 6;
+        const body = document.body;
+
+        const hr = document.querySelector('#hr');
+        const mn = document.querySelector('#mn');
+        const sc = document.querySelector('#sc');
+
+        const d_hr = document.querySelector('#d_hour');
+        const d_mn = document.querySelector('#d_minutes');
+        const d_sc = document.querySelector('#d_second');
+        const days = document.querySelector('#day');
+        const clock = document.querySelector('.clock');
+
+        var weekday = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ]
+
+        setInterval(() => {
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * deg;
+            let ss = day.getSeconds() * deg;
+
+            d_hr.innerHTML = day.getHours();
+            d_mn.innerHTML = day.getMinutes();
+            d_sc.innerHTML = day.getSeconds();
+            days.innerHTML = weekday[day.getDay()];
+
+            hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+
+            if (day.getHours() > 18) {
+                body.style.backgroundColor = '#000';
+                clock.style.borderColor = '#000';
+            } else {
+                clock.style.backgroundColor = '#091921';
+                body.style.backgroundColor = '#091921';
+            }
+        })
+    </script>
+</body>
+
+</html>
