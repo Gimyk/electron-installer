@@ -9,8 +9,7 @@
 
 # dependencies
 /node_modules
-/kaizen-win32-x64
-/kaizen_install
+*_install
 
 # profiling files
 chrome-profiler-events*.json
@@ -46,3 +45,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+*-win32-x64
