@@ -8,7 +8,9 @@ Github
 - https://github.com/electron/windows-installer#usage
 
 Make sure you have you JS+HTML in the dist folder
-and the icons in the icons folder, inclusive of the loader gif
+and the icons in the icons folder, inclusive of the loader gif.
+
+Edit the build.js file and main.js file for name of application and location of files.
 
 Steps
 > npm install electron-packager -g
